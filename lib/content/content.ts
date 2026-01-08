@@ -30,6 +30,7 @@ import {
 
 // Import your avatar here
 import Avatar from "@/public/images/asset/favicon benji.png";
+import linkifylogo from "@/public/images/asset/linkifylogo.png";
 
 // Purpose: Toggle shown content on the website.
 const Toggle = {
@@ -112,7 +113,7 @@ const Products: ProductProps[] = [
   {
     name: "Ce template",
     price: 5,
-    image: "@/public/images/asset/linkifylogo.png",
+    image: linkifylogo,
     url: "https://discord.gg/3WBVDMBJkb",
   },
   
