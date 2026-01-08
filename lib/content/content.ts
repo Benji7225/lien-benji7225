@@ -50,11 +50,11 @@ const devMode = {
 // Avatar: Import your avatar at the top of the file or use a URL.
 const Bio: BioProps = {
   name: "benji",
-  title: "Fondateur SaaS",
+  title: "SaaS Builder",
   description:
     "Je vibe code des SaaS avec passion",
   avatar: Avatar,
-  url: "https://discord.com/channels/1436721375162269860/1436721375954866231",
+  url: "https://discord.gg/3WBVDMBJkb",
 };
 
 // Purpose: Contains your social media links.
@@ -110,8 +110,8 @@ const Links: LinkProps[] = [
 // Customize: You can add more products by copying the object and changing the values.
 const Products: ProductProps[] = [
   {
-    name: "Product 1",
-    price: 36,
+    name: "Ce template",
+    price: 5,
     image: "https://ui.shadcn.com/placeholder.svg",
     url: "/",
   },
