@@ -36,7 +36,7 @@ const Toggle = {
   socials: true,
   bio: true,
   links: true,
-  products: false,
+  products: true,
   blogs: false,
 };
 
@@ -113,14 +113,9 @@ const Products: ProductProps[] = [
     name: "Ce template",
     price: 5,
     image: "https://ui.shadcn.com/placeholder.svg",
-    url: "/",
+    url: "/https://discord.gg/3WBVDMBJkb",
   },
-  {
-    name: "Product 2",
-    price: 18,
-    image: "https://ui.shadcn.com/placeholder.svg",
-    url: "/",
-  },
+  
 ];
 
 // Purpose: Contains the values for the rectangle cards on the website. Use to show ur blog posts.
