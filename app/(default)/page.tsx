@@ -1,9 +1,12 @@
+console.log("MA PAGE RENDU")
+
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 // Import your avatar here
-import Avatar from "@/public/images/asset/avatar.jpg";
+import Avatar from "@/public/images/asset/IMG_5744.jpg";
+
 
 // Components
 import DotPattern from "@/components/magicui/dot-pattern";
@@ -39,7 +42,8 @@ export default function Home() {
 
         {/* Main UI */}
         <div className="flex w-full items-center justify-center gap-x-3 mb-4 z-10">
-          <div className="w-16 h-auto aspect-square relative rounded-full overflow-hidden p-1 border bg-black">
+<div className="w-16 h-auto aspect-square relative rounded-full overflow-hidden p-1 border bg-[#009688]">
+
             <Image
               src={Bio.avatar}
               alt={`${Bio.name}'s avatar`}
@@ -79,9 +83,10 @@ export default function Home() {
             </p>
             <Link
               href={Bio.url}
-              className="bg-primary text-primary-foreground border w-full py-2 rounded-lg hover:bg-primary/90 text-center font-medium text-clamp-sm animate"
+              className="bg-[#009688] text-white border border-[#009688] w-full py-2 rounded-lg hover:bg-[#00796B] text-center font-medium text-clamp-sm animate"
+
             >
-              Let's Connect
+              Viens discuter
             </Link>
           </div>
         )}
@@ -90,13 +95,15 @@ export default function Home() {
         {Toggle.links &&
           Links.map((link, index) => (
             <Button
-              key={index}
-              subtext={link.subtext}
-              icon={<link.icon size={20} />}
-              href={link.url}
-            >
-              {link.name}
-            </Button>
+  key={index}
+  subtext={link.subtext}
+  icon={<link.icon size={20} />}
+  href={link.url}
+>
+  {link.name}
+</Button>
+
+
           ))}
 
         {/* Product Square */}

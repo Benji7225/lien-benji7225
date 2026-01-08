@@ -1,3 +1,6 @@
+console.log("test 1/2, test 1/2")
+import BuildBlueLogo from "@/public/images/asset/buildblue.png";
+
 // Type: TypeScript typesafe file.
 import {
   ProductProps,
@@ -13,43 +16,45 @@ import {
   TbBrandInstagram,
   TbBrandLinkedin,
   TbBrandTwitter,
+  TbBrandYoutube,
 } from "react-icons/tb";
 
 // Link Icons (Remove if not needed, this can improve performance.)
 import {
   BiArrowToBottom,
-  BiBadgeCheck,
+  BiRightTopArrowCircle,
   BiDollar,
   BiLayout,
+  BiExpandHorizontal,
 } from "react-icons/bi";
 
 // Import your avatar here
-import Avatar from "@/public/images/asset/avatar.jpg";
+import Avatar from "@/public/images/asset/favicon benji.png";
 
 // Purpose: Toggle shown content on the website.
 const Toggle = {
   socials: true,
   bio: true,
   links: true,
-  products: true,
-  blogs: true,
+  products: false,
+  blogs: false,
 };
 
 // MAKE ALL FALSE ON PRODUCTION
 const devMode = {
-  template: true,
+  template: false,
 };
 
 // Purpose: Contains your bio information.
 // Customize: You can change the values to your own.
 // Avatar: Import your avatar at the top of the file or use a URL.
 const Bio: BioProps = {
-  name: "msafdev",
-  title: "Software Engineer",
+  name: "benji",
+  title: "Fondateur SaaS",
   description:
-    "Creative Fullstack Developer Focusing on Next.js, Tailwind CSS and Supabase.",
+    "Je vibe code des SaaS avec passion",
   avatar: Avatar,
-  url: "/",
+  url: "https://discord.com/channels/1436721375162269860/1436721375954866231",
 };
 
 // Purpose: Contains your social media links.
@@ -59,19 +64,19 @@ const Bio: BioProps = {
 const Socials: SocialProps[] = [
   {
     url: "/",
-    icon: TbBrandGithub,
+    icon: TbBrandYoutube,
   },
   {
-    url: "/",
-    icon: TbBrandInstagram,
+    url: "https://x.com/benji7225",
+    icon: TbBrandTwitter,
   },
   {
-    url: "/",
+    url: "https://www.linkedin.com/in/benji7225/",
     icon: TbBrandLinkedin,
   },
   {
-    url: "/",
-    icon: TbBrandTwitter,
+    url: "https://www.instagram.com/benji.e__/",
+    icon: TbBrandInstagram,
   },
 ];
 
@@ -81,29 +86,24 @@ const Socials: SocialProps[] = [
 // Explore more icons here (https://react-icons.github.io/react-icons/)
 const Links: LinkProps[] = [
   {
-    name: "Portfolio",
-    url: "/",
-    subtext: "All of my personal projects",
-    icon: BiBadgeCheck,
+    name: "Bolt",
+    url: "https://bolt.new/?rid=hh7zsy",
+    subtext: "L'outil que j'utilise pour vibe coder mes SaaS",
+    icon: BiExpandHorizontal,
   },
   {
-    name: "Minilinks",
-    url: "/",
-    subtext: "A minimal Linktree alternative",
-    icon: BiLayout,
+    name: "Opal",
+    url: "https://applink.opal.so/invite-friend?rc=PYXWY&rId=JlcZHdCps0Qsm6HsEUdOU35Cix82&rNme=benji7225",
+    subtext: "Mon booster de productivité",
+    icon: BiRightTopArrowCircle,
   },
   {
-    name: "Saweria",
-    url: "/",
-    subtext: "Support me on Saweria",
+    name: "Aktionnaire",
+    url: "https://sparklp.co/5849b324/",
+    subtext: "La Newsletter gratuite que je suis",
     icon: BiDollar,
   },
-  {
-    name: "Installation",
-    url: "/",
-    subtext: "How to install this project",
-    icon: BiArrowToBottom,
-  },
+ 
 ];
 
 // Purpose: Contains the values for the square cards on the website. Use to show ur products.

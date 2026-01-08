@@ -7,8 +7,8 @@ import { devMode } from "@/lib/content/content";
 import { RxGithubLogo, RxLayout } from "react-icons/rx";
 
 export const metadata: Metadata = {
-  title: "Linktree Alt",
-  description: "Made by @msafdev",
+  title: "benji",
+  description: "Made by benji",
 };
 
 export default function GenerateLayout({
@@ -24,7 +24,7 @@ export default function GenerateLayout({
       {devMode.template && (
         <div className="flex flex-col sticky z-50 bottom-4 px-4 gap-y-2">
           <Link
-            href={"https://github.com/msafdev/msaf-link"}
+            href={"https://github.com"}
             target="_blank"
             className="px-3 py-1 rounded-md border bg-accent text-accent-foreground flex items-center gap-x-2 w-fit"
           >

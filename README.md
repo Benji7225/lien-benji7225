@@ -33,17 +33,7 @@
 
 
 
-  <p align="center">
-    Linktree alternative with little to no code required!
-    <br />
-    <a href="https://linkify-demo.vercel.app">View Demo</a>
-    ·
-    <a href="https://github.com/msafdev/linkify/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/msafdev/linkify/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
-</div>
-
+  
 
 
 <!-- TABLE OF CONTENTS -->
