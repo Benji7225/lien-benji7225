@@ -113,7 +113,7 @@ const Products: ProductProps[] = [
   {
     name: "Ce template",
     price: 5,
-    image: "https://i.pinimg.com/originals/49/de/2a/49de2a665bf67c06db53d992fcc798a9.gif",
+    image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
     url: "https://discord.gg/3WBVDMBJkb",
   },
   

@@ -159,7 +159,7 @@ const ProductForm: FC = () => {
                 type="text"
                 id="image"
                 name="image"
-                placeholder="https://ui.shadcn.com/placeholder.svg"
+                placeholder="https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg"
                 className=""
                 required
               />
