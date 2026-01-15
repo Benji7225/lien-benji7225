@@ -117,43 +117,64 @@ const MiniCard = ({
     name: string;
     image: any;
     url: string;
-    status?: string;
+    disabled?: boolean;
   };
 }) => {
+  const isDisabled = project.disabled === true;
+
+  const CardContent = (
+    <>
+      <div className="relative w-full h-full rounded-lg overflow-hidden">
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          className={cn(
+            "object-cover transition",
+            isDisabled && "grayscale opacity-60"
+          )}
+        />
+      </div>
+
+      <p
+        className={cn(
+          "mt-1 text-xs text-center",
+          isDisabled ? "text-muted-foreground" : "text-foreground"
+        )}
+      >
+        {project.name}
+      </p>
+    </>
+  );
+
+  // 🔒 CARTE DÉSACTIVÉE → pas de lien
+  if (isDisabled) {
+    return (
+      <div
+        className="flex flex-col items-center justify-center
+        rounded-xl border bg-popover p-2
+        aspect-square cursor-not-allowed opacity-60"
+      >
+        {CardContent}
+      </div>
+    );
+  }
+
+  // ✅ CARTE ACTIVE → cliquable
   return (
     <Link
       href={project.url}
       target="_blank"
       className="flex flex-col items-center justify-center
       rounded-xl border bg-popover p-2
-      hover:scale-[1.03] transition
-      aspect-square"
+      aspect-square
+      hover:scale-[1.03] transition"
     >
-      <div className="relative w-full h-full rounded-lg overflow-hidden">
-        <Image
-          src={project.image}
-          alt={project.name}
-          fill
-          className="object-cover"
-        />
-
-        {/* STATUS BADGE */}
-        {project.status && (
-          <div className="absolute bottom-1 right-1
-          text-white
-          text-[10px] px-2 py-0.5
-          rounded-md">
-            {project.status}
-          </div>
-        )}
-      </div>
-
-      <p className="mt-1 text-xs text-center text-foreground">
-        {project.name}
-      </p>
+      {CardContent}
     </Link>
   );
 };
+
 
 
 export { SquareCard, RectangleCard, MiniCard };

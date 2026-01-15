@@ -53,7 +53,7 @@ const Bio: BioProps = {
   name: "benji",
   title: "SaaS Builder",
   description:
-    "Je vibe code des SaaS avec passion",
+    "J'apprends à vibe coder des SaaS !",
   avatar: Avatar,
   url: "https://discord.gg/3WBVDMBJkb",
 };
@@ -126,27 +126,26 @@ export const MiniProjects = [
   },
   {
     name: "Edukidi",
-    image: "https://i.pinimg.com/736x/10/39/e9/1039e9bc2218835d2a8b9d8642867ee2.jpg",
+    image: "https://i.pinimg.com/736x/dc/e0/7d/dce07d59c3797a9f3d046807f3f71e06.jpg",
     url: "https://edukidi.com",
-    status: "Clôturé",
   },
    {
-    name: "The Richest",
+    name: "TheRichest",
     image: "https://i.pinimg.com/736x/9c/0f/d4/9c0fd40ef08c0082bf5a6d6f8e386381.jpg",
     url: "https://therichest.app",
-    status: "Clôturé",
+      disabled: true, // 👈 fermé
   },
    {
     name: "My HelpR",
     image: "https://i.pinimg.com/736x/4c/fb/e9/4cfbe9c29eea591433e125ab833bed75.jpg",
     url: "https://example.com",
-    status: "Clôturé",
+      disabled: true, // 👈 fermé
   },
   {
     name: "Krow",
     image: "https://i.pinimg.com/736x/f1/77/63/f17763f6ee03afbfdb855f9897ef4068.jpg",
     url: "https://thekrow.app",
-    status: "Clôturé",
+      disabled: true, // 👈 fermé
   },
 ];
 
