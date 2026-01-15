@@ -131,7 +131,7 @@ const MiniCard = ({
           fill
           className={cn(
             "object-cover transition",
-            isDisabled && "grayscale opacity-60"
+            isDisabled && "grayscale opacity-99"
           )}
         />
       </div>

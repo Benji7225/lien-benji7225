@@ -126,8 +126,9 @@ export const MiniProjects = [
   },
   {
     name: "Edukidi",
-    image: "https://i.pinimg.com/736x/dc/e0/7d/dce07d59c3797a9f3d046807f3f71e06.jpg",
+    image: "https://i.pinimg.com/736x/10/39/e9/1039e9bc2218835d2a8b9d8642867ee2.jpg",
     url: "https://edukidi.com",
+    disabled: true, // 👈 fermé
   },
    {
     name: "TheRichest",
