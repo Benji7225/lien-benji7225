@@ -116,21 +116,25 @@ export const MiniProjects = [
     name: "Linkify",
     image: linkifylogo,
     url: "https://example.com",
+    
   },
   {
     name: "Mon SaaS",
     image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
     url: "https://example.com",
+    status: "Clôturé",
   },
    {
     name: "Mon SaaS",
     image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
     url: "https://example.com",
+    status: "Clôturé",
   },
    {
     name: "Mon SaaS",
     image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
     url: "https://example.com",
+    status: "Clôturé",
   },
 ];
 

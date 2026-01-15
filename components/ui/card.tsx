@@ -117,6 +117,7 @@ const MiniCard = ({
     name: string;
     image: any;
     url: string;
+    status?: string;
   };
 }) => {
   return (
@@ -135,6 +136,16 @@ const MiniCard = ({
           fill
           className="object-cover"
         />
+
+        {/* STATUS BADGE */}
+        {project.status && (
+          <div className="absolute bottom-1 right-1
+          bg-black/70 text-white
+          text-[10px] px-2 py-0.5
+          rounded-md">
+            {project.status}
+          </div>
+        )}
       </div>
 
       <p className="mt-1 text-xs text-center text-foreground">
@@ -143,5 +154,6 @@ const MiniCard = ({
     </Link>
   );
 };
+
 
 export { SquareCard, RectangleCard, MiniCard };

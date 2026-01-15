@@ -102,7 +102,7 @@ export default function Home() {
           ))}
 
         {/* MINI PROJECTS */}
-        <div className="grid grid-cols-3 w-full gap-2 z-10 mt-2">
+        <div className="grid grid-cols-4 w-full gap-2 z-10 mt-2">
           {MiniProjects.map((project, index) => (
             <MiniCard key={index} project={project} />
           ))}
