@@ -107,6 +107,27 @@ const Links: LinkProps[] = [
  
 ];
 
+
+
+
+
+export const MiniProjects = [
+  {
+    name: "Linkify",
+    image: linkifylogo,
+    url: "https://example.com",
+  },
+  {
+    name: "Mon SaaS",
+    image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
+    url: "https://example.com",
+  },
+];
+
+
+
+
+
 // Purpose: Contains the values for the square cards on the website. Use to show ur products.
 // Customize: You can add more products by copying the object and changing the values.
 const Products: ProductProps[] = [

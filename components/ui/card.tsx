@@ -1,9 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { BlogProps, ProductProps } from "@/lib/types/content";
 
+/* =====================================================
+   SQUARE CARD — PRODUITS (AVEC PRIX)
+===================================================== */
 const SquareCard = ({
   product,
   className = "",
@@ -21,19 +24,30 @@ const SquareCard = ({
       )}
     >
       <div className="relative w-full h-auto aspect-square rounded-lg bg-accent overflow-hidden">
-        <Image src={product.image} alt={product.name} fill />
-        <div className="absolute inset-0 w-full h-full bg-transparent group-hover:bg-accent/60 z-10 animate" />
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-transparent group-hover:bg-accent/60 z-10 transition" />
       </div>
+
       <div className="flex flex-col w-full">
         <h3 className="text-clamp text-popover-foreground font-medium">
           {product.name}
         </h3>
-        <p className="text-clamp-sm text-muted-foreground">${product.price}</p>
+        <p className="text-clamp-sm text-muted-foreground">
+          ${product.price}
+        </p>
       </div>
     </Link>
   );
 };
 
+/* =====================================================
+   RECTANGLE CARD — BLOG
+===================================================== */
 const RectangleCard = ({
   blog,
   className = "",
@@ -49,38 +63,85 @@ const RectangleCard = ({
       )}
     >
       <div className="relative w-full h-auto aspect-square rounded-lg bg-accent overflow-hidden">
-        <Image src={blog.image} alt={blog.title} fill />
-        <div className="absolute inset-0 w-full h-full bg-transparent group-hover:bg-accent/60 z-10 animate" />
+        <Image
+          src={blog.image}
+          alt={blog.title}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-transparent group-hover:bg-accent/60 z-10 transition" />
       </div>
+
       <div className="w-full h-auto aspect-square flex flex-col">
         <p className="text-clamp text-popover-foreground font-medium">
           {blog.title}
         </p>
-        <div className="flex flex-col h-auto grow gap-y-2">
-          <p className="text-muted-foreground text-clamp-sm mb-auto line-clamp-3">
+
+        <div className="flex flex-col grow gap-y-2">
+          <p className="text-muted-foreground text-clamp-sm line-clamp-3">
             {blog.description}
           </p>
-          <div className="flex items-center gap-x-1">
+
+          <div className="flex items-center gap-x-1 flex-wrap">
             {blog.tags.map((tag, index) => (
-              <p
+              <span
                 key={index}
-                className="text-muted-foreground text-clamp-sm leading-none "
+                className="text-muted-foreground text-clamp-sm leading-none"
               >
                 {tag}
                 {index < blog.tags.length - 1 ? ", " : ""}
-              </p>
+              </span>
             ))}
           </div>
+
           <Link
             href={blog.url}
             target="_blank"
-            className="text-foreground w-fullfont-medium underline text-clamp-sm animate"
+            className="text-foreground font-medium underline text-clamp-sm"
           >
-            Read More
+            Read more
           </Link>
         </div>
       </div>
     </div>
   );
 };
-export { SquareCard, RectangleCard };
+
+/* =====================================================
+   MINI CARD — PROJETS (SANS PRIX, PLUS PETIT)
+===================================================== */
+const MiniCard = ({
+  project,
+}: {
+  project: {
+    name: string;
+    image: any;
+    url: string;
+  };
+}) => {
+  return (
+    <Link
+      href={project.url}
+      target="_blank"
+      className="flex flex-col items-center justify-center
+      rounded-xl border bg-popover p-2
+      hover:scale-[1.03] transition
+      aspect-square"
+    >
+      <div className="relative w-full h-full rounded-lg overflow-hidden">
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <p className="mt-1 text-xs text-center text-foreground">
+        {project.name}
+      </p>
+    </Link>
+  );
+};
+
+export { SquareCard, RectangleCard, MiniCard };

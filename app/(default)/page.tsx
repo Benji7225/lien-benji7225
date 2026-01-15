@@ -1,26 +1,22 @@
-console.log("MA PAGE RENDU")
+console.log("MA PAGE RENDU");
 
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-// Import your avatar here
-import Avatar from "@/public/images/asset/IMG_5744.jpg";
-
-
 // Components
 import DotPattern from "@/components/magicui/dot-pattern";
 import { Button, DarkMode } from "@/components/ui/button";
-import { RectangleCard, SquareCard } from "@/components/ui/card";
+import { RectangleCard, MiniCard } from "@/components/ui/card";
 
 // Datas
 import {
   Blogs,
   Links,
-  Products,
   Socials,
   Toggle,
   Bio,
+  MiniProjects,
 } from "@/lib/content/content";
 
 export default function Home() {
@@ -37,24 +33,25 @@ export default function Home() {
           )}
         />
 
-        {/* Dark */}
+        {/* Dark mode toggle */}
         <DarkMode />
 
-        {/* Main UI */}
+        {/* Header */}
         <div className="flex w-full items-center justify-center gap-x-3 mb-4 z-10">
-<div className="w-16 h-auto aspect-square relative rounded-full overflow-hidden p-1 border bg-[#009688]">
-
+          <div className="w-16 aspect-square relative rounded-full overflow-hidden p-1 border bg-[#009688]">
             <Image
               src={Bio.avatar}
               alt={`${Bio.name}'s avatar`}
-              className="w-full h-full object-cover"
+              className="object-cover"
+              fill
             />
           </div>
-          <div className="flex w-fit justify-center flex-col">
-            <h1 className="text-clamp font-medium text-foreground animate">
+
+          <div className="flex flex-col">
+            <h1 className="text-clamp font-medium text-foreground">
               {Bio.name}
             </h1>
-            <p className="text-clamp-sm text-muted-foreground animate">
+            <p className="text-clamp-sm text-muted-foreground">
               {Bio.title}
             </p>
           </div>
@@ -62,29 +59,29 @@ export default function Home() {
 
         {/* Socials */}
         {Toggle.socials && (
-          <div className="flex w-full items-end justify-center gap-x-3 mb-4 flex-wrap z-10">
+          <div className="flex w-full justify-center gap-x-3 mb-4 flex-wrap z-10">
             {Socials.map((social, index) => (
               <Link
-                aria-label={`Go to ${social.url}`}
                 key={index}
                 href={social.url}
+                aria-label={`Go to ${social.url}`}
               >
-                <social.icon className="w-5 h-5 text-foreground animate" />
+                <social.icon className="w-5 h-5 text-foreground" />
               </Link>
             ))}
           </div>
         )}
 
         {/* Bio */}
-        {Toggle.socials && (
-          <div className="flex flex-col gap-y-2 h-fit w-full p-2 rounded-xl border bg-popover backdrop-blur-sm animate z-10">
-            <p className="text-clamp-sm text-popover-foreground w-fit animate">
+        {Toggle.bio && (
+          <div className="flex flex-col gap-y-2 w-full p-2 rounded-xl border bg-popover backdrop-blur-sm z-10">
+            <p className="text-clamp-sm text-popover-foreground">
               {Bio.description}
             </p>
+
             <Link
               href={Bio.url}
-              className="bg-[#009688] text-white border border-[#009688] w-full py-2 rounded-lg hover:bg-[#00796B] text-center font-medium text-clamp-sm animate"
-
+              className="bg-[#009688] text-white border border-[#009688] w-full py-2 rounded-lg hover:bg-[#00796B] text-center font-medium text-clamp-sm"
             >
               Viens discuter
             </Link>
@@ -95,29 +92,27 @@ export default function Home() {
         {Toggle.links &&
           Links.map((link, index) => (
             <Button
-  key={index}
-  subtext={link.subtext}
-  icon={<link.icon size={20} />}
-  href={link.url}
->
-  {link.name}
-</Button>
-
-
+              key={index}
+              subtext={link.subtext}
+              icon={<link.icon size={20} />}
+              href={link.url}
+            >
+              {link.name}
+            </Button>
           ))}
 
-        {/* Product Square */}
-        {Toggle.products && (
-          <div className="grid grid-cols-2 w-full gap-3 z-10">
-            {Products.map((product, index) => (
-              <SquareCard key={index} product={product} />
-            ))}
-          </div>
-        )}
+        {/* MINI PROJECTS */}
+        <div className="grid grid-cols-3 w-full gap-2 z-10 mt-2">
+          {MiniProjects.map((project, index) => (
+            <MiniCard key={index} project={project} />
+          ))}
+        </div>
 
-        {/* Blog Card */}
+        {/* Blog */}
         {Toggle.blogs &&
-          Blogs.map((blog, index) => <RectangleCard key={index} blog={blog} />)}
+          Blogs.map((blog, index) => (
+            <RectangleCard key={index} blog={blog} />
+          ))}
       </section>
     </main>
   );
