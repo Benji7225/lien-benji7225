@@ -140,7 +140,7 @@ const MiniCard = ({
         {/* STATUS BADGE */}
         {project.status && (
           <div className="absolute bottom-1 right-1
-          bg-black/70 text-white
+          text-white
           text-[10px] px-2 py-0.5
           rounded-md">
             {project.status}

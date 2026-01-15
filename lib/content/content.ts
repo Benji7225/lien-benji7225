@@ -113,27 +113,39 @@ const Links: LinkProps[] = [
 
 export const MiniProjects = [
   {
-    name: "Linkify",
-    image: linkifylogo,
-    url: "https://example.com",
+    name: "DotsDaily",
+    image: "https://i.pinimg.com/1200x/11/e9/67/11e967262ec1cc94ba1484a32081a9cf.jpg",
+    url: "https://dotsdaily.app",
     
   },
   {
-    name: "Mon SaaS",
+    name: "Linkify",
     image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
-    url: "https://example.com",
+    url: "https://benji7225.netlify.app/",
+
+  },
+  {
+    name: "Edukidi",
+    image: "https://i.pinimg.com/736x/10/39/e9/1039e9bc2218835d2a8b9d8642867ee2.jpg",
+    url: "https://edukidi.com",
     status: "Clôturé",
   },
    {
-    name: "Mon SaaS",
-    image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
-    url: "https://example.com",
+    name: "The Richest",
+    image: "https://i.pinimg.com/736x/9c/0f/d4/9c0fd40ef08c0082bf5a6d6f8e386381.jpg",
+    url: "https://therichest.app",
     status: "Clôturé",
   },
    {
-    name: "Mon SaaS",
-    image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
+    name: "My HelpR",
+    image: "https://i.pinimg.com/736x/4c/fb/e9/4cfbe9c29eea591433e125ab833bed75.jpg",
     url: "https://example.com",
+    status: "Clôturé",
+  },
+  {
+    name: "Krow",
+    image: "https://i.pinimg.com/736x/f1/77/63/f17763f6ee03afbfdb855f9897ef4068.jpg",
+    url: "https://thekrow.app",
     status: "Clôturé",
   },
 ];
