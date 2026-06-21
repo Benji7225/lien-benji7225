@@ -135,8 +135,7 @@ export const MiniProjects = [
   {
     name: "Vision",
     image: "/images/asset/vision.png",
-    url: "",
-    comingSoon: true, // en review App Store
+    url: "https://apps.apple.com/app/id6780281756",
   },
   {
     name: "DotsDaily",
@@ -145,14 +144,14 @@ export const MiniProjects = [
     dimmed: true, // grisé mais cliquable
   },
   {
-    name: "Creator AI",
-    image: "/images/asset/creatoraitools.png",
+    name: "3MN",
+    image: "/images/asset/mindgate.png",
     url: "",
     disabled: true,
   },
   {
-    name: "3MN",
-    image: "/images/asset/mindgate.png",
+    name: "Creator AI",
+    image: "/images/asset/creatoraitools.png",
     url: "",
     disabled: true,
   },

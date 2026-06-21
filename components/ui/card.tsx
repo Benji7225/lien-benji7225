@@ -136,7 +136,7 @@ const MiniCard = ({
           fill
           className={cn(
             "object-cover transition",
-            isDisabled && "grayscale opacity-99"
+            grayed && "grayscale opacity-90"
           )}
         />
         {isComingSoon && (
@@ -149,7 +149,7 @@ const MiniCard = ({
       <p
         className={cn(
           "mt-1 text-xs text-center",
-          isDisabled ? "text-muted-foreground" : "text-foreground"
+          grayed ? "text-muted-foreground" : "text-foreground"
         )}
       >
         {project.name}
