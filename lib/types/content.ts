@@ -6,6 +6,12 @@ export interface SocialProps {
   icon: IconType;
 }
 
+export interface ToolProps {
+  name: string;
+  url: string;
+  icon: IconType;
+}
+
 export interface LinkProps {
   name: string;
   url: string;

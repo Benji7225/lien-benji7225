@@ -118,9 +118,14 @@ const MiniCard = ({
     image: any;
     url: string;
     disabled?: boolean;
+    comingSoon?: boolean;
+    dimmed?: boolean;
   };
 }) => {
   const isDisabled = project.disabled === true;
+  const isComingSoon = project.comingSoon === true;
+  const isDimmed = project.dimmed === true;
+  const grayed = isDisabled || isDimmed;
 
   const CardContent = (
     <>
@@ -134,6 +139,11 @@ const MiniCard = ({
             isDisabled && "grayscale opacity-99"
           )}
         />
+        {isComingSoon && (
+          <span className="absolute top-1 right-1 rounded-full bg-[#009688] text-white text-[9px] leading-none px-1.5 py-0.5 font-medium">
+            Bientôt
+          </span>
+        )}
       </div>
 
       <p
@@ -147,13 +157,16 @@ const MiniCard = ({
     </>
   );
 
-  // 🔒 CARTE DÉSACTIVÉE → pas de lien
-  if (isDisabled) {
+  // 🔒 CARTE DÉSACTIVÉE (fermée) ou ⏳ À VENIR → pas de lien
+  if (isDisabled || isComingSoon) {
     return (
       <div
-        className="flex flex-col items-center justify-center
-        rounded-xl border bg-popover p-2
-        aspect-square cursor-not-allowed opacity-60"
+        className={cn(
+          `flex flex-col items-center justify-center
+          rounded-xl border bg-popover p-2 aspect-square`,
+          isDisabled && "cursor-not-allowed opacity-60",
+          isComingSoon && "cursor-default"
+        )}
       >
         {CardContent}
       </div>

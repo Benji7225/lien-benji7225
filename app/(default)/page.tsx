@@ -1,5 +1,3 @@
-console.log("MA PAGE RENDU");
-
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -13,6 +11,7 @@ import { RectangleCard, MiniCard } from "@/components/ui/card";
 import {
   Blogs,
   Links,
+  Tools,
   Socials,
   Toggle,
   Bio,
@@ -64,6 +63,7 @@ export default function Home() {
               <Link
                 key={index}
                 href={social.url}
+                target="_blank"
                 aria-label={`Go to ${social.url}`}
               >
                 <social.icon className="w-5 h-5 text-foreground" />
@@ -81,14 +81,47 @@ export default function Home() {
 
             <Link
               href={Bio.url}
+              target="_blank"
               className="bg-[#009688] text-white border border-[#009688] w-full py-2 rounded-lg hover:bg-[#00796B] text-center font-medium text-clamp-sm"
             >
-              Viens discuter
+              Ajoute-moi sur Snap
             </Link>
           </div>
         )}
 
-        {/* Links */}
+        {/* MINI PROJECTS */}
+        <div className="grid grid-cols-4 w-full gap-2 z-10 mt-2">
+          {MiniProjects.map((project, index) => (
+            <MiniCard key={index} project={project} />
+          ))}
+        </div>
+
+        {/* TOOLS — les outils que j'utilise */}
+        {Toggle.tools && (
+          <div className="w-full z-10 mt-2">
+            <p className="text-clamp-xs text-muted-foreground mb-1 text-center">
+              Les outils que j&apos;utilise
+            </p>
+            <div className="grid grid-cols-4 w-full gap-2">
+              {Tools.map((tool, index) => (
+                <Link
+                  key={index}
+                  href={tool.url}
+                  target="_blank"
+                  aria-label={tool.name}
+                  className="flex flex-col items-center justify-center gap-1 rounded-xl border bg-popover p-2 aspect-square hover:scale-[1.03] transition"
+                >
+                  <tool.icon className="w-5 h-5 text-foreground" />
+                  <span className="text-[10px] text-muted-foreground text-center leading-none">
+                    {tool.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Links (big buttons) */}
         {Toggle.links &&
           Links.map((link, index) => (
             <Button
@@ -100,13 +133,6 @@ export default function Home() {
               {link.name}
             </Button>
           ))}
-
-        {/* MINI PROJECTS */}
-        <div className="grid grid-cols-4 w-full gap-2 z-10 mt-2">
-          {MiniProjects.map((project, index) => (
-            <MiniCard key={index} project={project} />
-          ))}
-        </div>
 
         {/* Blog */}
         {Toggle.blogs &&

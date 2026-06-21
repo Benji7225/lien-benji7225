@@ -1,43 +1,44 @@
-console.log("test 1/2, test 1/2")
-import BuildBlueLogo from "@/public/images/asset/buildblue.png";
-
 // Type: TypeScript typesafe file.
 import {
   ProductProps,
   LinkProps,
   SocialProps,
+  ToolProps,
   BlogProps,
   BioProps,
 } from "../types/content";
 
-// Social Icons (Remove if not needed, this can improve performance.)
+// Social Icons
 import {
-  TbBrandGithub,
   TbBrandInstagram,
   TbBrandLinkedin,
   TbBrandTwitter,
-  TbBrandYoutube,
+  TbBrandVscode,
 } from "react-icons/tb";
 
-// Link Icons (Remove if not needed, this can improve performance.)
+// Tool brand icons
 import {
-  BiArrowToBottom,
-  BiRightTopArrowCircle,
-  BiDollar,
-  BiLayout,
-  BiExpandHorizontal,
-} from "react-icons/bi";
+  SiClaude,
+  SiGithub,
+  SiSupabase,
+  SiVercel,
+  SiNotion,
+  SiCanva,
+} from "react-icons/si";
+
+// Link Icons
+import { BiDollar } from "react-icons/bi";
 
 // Import your avatar here
 import Avatar from "@/public/images/asset/favicon benji.png";
-import linkifylogo from "@/public/images/asset/linkifylogo.png";
 
 // Purpose: Toggle shown content on the website.
 const Toggle = {
   socials: true,
   bio: true,
   links: true,
-  products: true,
+  tools: true,
+  products: false,
   blogs: false,
 };
 
@@ -47,26 +48,16 @@ const devMode = {
 };
 
 // Purpose: Contains your bio information.
-// Customize: You can change the values to your own.
-// Avatar: Import your avatar at the top of the file or use a URL.
 const Bio: BioProps = {
   name: "benji",
-  title: "SaaS Builder",
-  description:
-    "J'apprends à vibe coder des SaaS !",
+  title: "Indie maker · 20 ans",
+  description: "Je crée des apps mobiles et web.",
   avatar: Avatar,
-  url: "https://discord.gg/3WBVDMBJkb",
+  url: "https://www.snapchat.com/add/benji7225",
 };
 
 // Purpose: Contains your social media links.
-// Customize: You can add more social links by copying the object and changing the values.
-// Icons: I use react-icons/tb (Tabler Icons) for the icons here.
-// Explore more icons here (https://react-icons.github.io/react-icons/)
 const Socials: SocialProps[] = [
-  {
-    url: "/",
-    icon: TbBrandYoutube,
-  },
   {
     url: "https://x.com/benji7225",
     icon: TbBrandTwitter,
@@ -81,108 +72,122 @@ const Socials: SocialProps[] = [
   },
 ];
 
-// Purpose: Contains the links for the website.
-// Customize: You can add more links by copying the object and changing the values.
-// Icons: I used react-icons/bi (BoxIcons) for the icons here.
-// Explore more icons here (https://react-icons.github.io/react-icons/)
+// Purpose: Big buttons (links I want to highlight).
 const Links: LinkProps[] = [
-  {
-    name: "Bolt",
-    url: "https://bolt.new/?rid=hh7zsy",
-    subtext: "L'outil que j'utilise pour vibe coder mes SaaS",
-    icon: BiExpandHorizontal,
-  },
-  {
-    name: "Opal",
-    url: "https://applink.opal.so/invite-friend?rc=PYXWY&rId=JlcZHdCps0Qsm6HsEUdOU35Cix82&rNme=benji7225",
-    subtext: "Mon booster de productivité",
-    icon: BiRightTopArrowCircle,
-  },
   {
     name: "Aktionnaire",
     url: "https://sparklp.co/5849b324/",
-    subtext: "La Newsletter gratuite que je suis",
+    subtext: "La newsletter que je lis tous les jours",
     icon: BiDollar,
   },
- 
 ];
 
-
-
-
-
-export const MiniProjects = [
+// Purpose: The tools I actually use day to day.
+const Tools: ToolProps[] = [
   {
-    name: "DotsDaily",
-    image: "https://i.pinimg.com/1200x/11/e9/67/11e967262ec1cc94ba1484a32081a9cf.jpg",
-    url: "https://dotsdaily.app",
-    
+    name: "Claude",
+    url: "https://claude.com/claude-code",
+    icon: SiClaude,
   },
   {
-    name: "Linkify",
-    image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
-    url: "https://benji7225.netlify.app/",
+    name: "VS Code",
+    url: "https://code.visualstudio.com",
+    icon: TbBrandVscode,
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com",
+    icon: SiGithub,
+  },
+  {
+    name: "Supabase",
+    url: "https://supabase.com",
+    icon: SiSupabase,
+  },
+  {
+    name: "Vercel",
+    url: "https://vercel.com",
+    icon: SiVercel,
+  },
+  {
+    name: "Notion",
+    url: "https://notion.so",
+    icon: SiNotion,
+  },
+  {
+    name: "Canva",
+    url: "https://canva.com",
+    icon: SiCanva,
+  },
+];
 
+// Purpose: The project grid (square mini cards).
+// - actif (couleur, cliquable) : pas de flag
+// - dimmed : grisé MAIS cliquable
+// - disabled : grisé, pas cliquable (fermé / jamais shippé)
+// - comingSoon : badge "Bientôt", pas cliquable
+export const MiniProjects = [
+  {
+    name: "Appolyn",
+    image: "/images/asset/appolyn.png",
+    url: "https://appolyn.io",
+  },
+  {
+    name: "Vision",
+    image: "/images/asset/vision.png",
+    url: "",
+    comingSoon: true, // en review App Store
+  },
+  {
+    name: "DotsDaily",
+    image: "/images/asset/dotsdaily.png",
+    url: "https://dotsdaily.app",
+    dimmed: true, // grisé mais cliquable
+  },
+  {
+    name: "Creator AI",
+    image: "/images/asset/creatoraitools.png",
+    url: "",
+    disabled: true,
+  },
+  {
+    name: "3MN",
+    image: "/images/asset/mindgate.png",
+    url: "",
+    disabled: true,
   },
   {
     name: "Edukidi",
-    image: "https://i.pinimg.com/736x/10/39/e9/1039e9bc2218835d2a8b9d8642867ee2.jpg",
+    image:
+      "https://i.pinimg.com/736x/10/39/e9/1039e9bc2218835d2a8b9d8642867ee2.jpg",
     url: "https://edukidi.com",
-    disabled: true, // 👈 fermé
+    disabled: true,
   },
-   {
+  {
     name: "TheRichest",
-    image: "https://i.pinimg.com/736x/9c/0f/d4/9c0fd40ef08c0082bf5a6d6f8e386381.jpg",
+    image:
+      "https://i.pinimg.com/736x/9c/0f/d4/9c0fd40ef08c0082bf5a6d6f8e386381.jpg",
     url: "https://therichest.app",
-      disabled: true, // 👈 fermé
+    disabled: true,
   },
-   {
+  {
     name: "My HelpR",
-    image: "https://i.pinimg.com/736x/4c/fb/e9/4cfbe9c29eea591433e125ab833bed75.jpg",
+    image:
+      "https://i.pinimg.com/736x/4c/fb/e9/4cfbe9c29eea591433e125ab833bed75.jpg",
     url: "https://example.com",
-      disabled: true, // 👈 fermé
+    disabled: true,
   },
   {
     name: "Krow",
-    image: "https://i.pinimg.com/736x/f1/77/63/f17763f6ee03afbfdb855f9897ef4068.jpg",
+    image:
+      "https://i.pinimg.com/736x/f1/77/63/f17763f6ee03afbfdb855f9897ef4068.jpg",
     url: "https://thekrow.app",
-      disabled: true, // 👈 fermé
+    disabled: true,
   },
 ];
 
+// Kept for the template (not shown).
+const Products: ProductProps[] = [];
+const Blogs: BlogProps[] = [];
 
-
-
-
-// Purpose: Contains the values for the square cards on the website. Use to show ur products.
-// Customize: You can add more products by copying the object and changing the values.
-const Products: ProductProps[] = [
-  {
-    name: "Ce template",
-    price: 5,
-    image: "https://i.pinimg.com/736x/a5/08/71/a508711adc44790fdf91833c2530f2cc.jpg",
-    url: "https://discord.gg/3WBVDMBJkb",
-  },
-  
-];
-
-// Purpose: Contains the values for the rectangle cards on the website. Use to show ur blog posts.
-// Customize: You can add more blogs by copying the object and changing the values.
-const Blogs: BlogProps[] = [
-  {
-    title: "Blog 1",
-    description: "Lorem ipsum dolor sit amet.",
-    image: "https://ui.shadcn.com/placeholder.svg",
-    url: "/",
-    tags: ["Personal"],
-  },
-  {
-    title: "Blog 2",
-    description: "Lorem ipsum dolor sit amet.",
-    image: "https://ui.shadcn.com/placeholder.svg",
-    url: "/",
-    tags: ["UI", "UX"],
-  },
-];
-
-export { Links, Products, Socials, Blogs, Toggle, devMode, Bio };
+export { Links, Tools, Products, Socials, Blogs, Toggle, devMode, Bio };
